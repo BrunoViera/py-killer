@@ -2,8 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { z } from "zod";
 
-import { columns } from "./components/columns";
-import { DataTable } from "./components/data-table/data-table";
+import ProductTable from "./components/ProductTable";
 import { taskSchema } from "./data/schema";
 
 // Simulate a database read for tasks.
@@ -31,7 +30,8 @@ export default async function Productos() {
             </p>
           </div>
         </div>
-        <DataTable data={tasks} columns={columns} />
+        {/* <DataTable data={tasks} columns={columns} /> */}
+        <ProductTable />
       </div>
     </main>
   );
