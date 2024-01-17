@@ -1,4 +1,4 @@
-export default async function Productos() {
+export default function Productos() {
   return (
     <main className="flex min-h-screen flex-col items-start justify-between">
       <div className="flex flex-col space-y-8 w-full">

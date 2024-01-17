@@ -1,7 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-
 import Link from "next/link";
 
 interface SidebarNavProps {
@@ -12,24 +10,20 @@ interface SidebarNavProps {
 }
 
 export function SidebarNav({ items }: SidebarNavProps) {
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   return (
     <aside className="-mx-4 w-auto max-w-xs">
       <nav className="flex space-x-2 w-full">
-        <div className="pb-12">
-          <div className="space-y-4 pl-4">
-            {items.map((i) => (
-              <Link
-                key={i.href}
-                href={i.href}
-                className="w-full text-left !justify-start"
-              >
-                {i.title}
-              </Link>
-            ))}
-          </div>
-        </div>
+        {items.map((i) => (
+          <Link
+            key={i.href}
+            href={i.href}
+            className="w-full text-left !justify-start"
+          >
+            {i.title}
+          </Link>
+        ))}
       </nav>
     </aside>
   );

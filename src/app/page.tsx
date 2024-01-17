@@ -1,7 +1,10 @@
+import { Button, Flex, Text } from "@radix-ui/themes";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      hello moto
-    </main>
+    <Flex direction="column" gap="2">
+      <Text>Hello from Radix Themes :)</Text>
+      <Button>Let`&apos`s go</Button>
+    </Flex>
   );
 }
