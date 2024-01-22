@@ -1,3 +1,5 @@
+import "@radix-ui/themes/styles.css";
+import classNames from "classnames";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "../globals.css";
@@ -13,5 +15,14 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <div id="layout-app">{children}</div>;
+  return (
+    <div
+      className={classNames(
+        "min-h-screen bg-background font-sans antialiased",
+        fontSans.variable
+      )}
+    >
+      {children}
+    </div>
+  );
 }
