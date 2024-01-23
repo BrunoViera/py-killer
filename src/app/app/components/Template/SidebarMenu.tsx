@@ -11,9 +11,8 @@ export default function SidebarMenu() {
   return (
     <aside
       id="default-sidebar"
-      className="sidebar w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500"
-      // className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
       aria-label="Sidebar"
+      className="sidebar w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500"
     >
       <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
         <ul className="space-y-2 font-medium">
@@ -26,10 +25,19 @@ export default function SidebarMenu() {
                 src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                 alt=""
               />
-              <div className="font-medium dark:text-white">
-                <div>Bruno Viera</div>
+              <div className="flex flex-col dark:text-white">
+                <span className="font-medium">Bruno Viera</span>
+                <span className="text-xs">Administrador</span>
               </div>
             </div>
+          </li>
+          <li>
+            <Link
+              href="/logout"
+              className="font-medium dark:text-white text-center block pb-2 border-b-[1px]"
+            >
+              Salir
+            </Link>
           </li>
           <li>
             <Link
