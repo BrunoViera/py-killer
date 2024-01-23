@@ -1,4 +1,4 @@
-export default function Productos() {
+export default function Config() {
   return (
     <>
       {/* <header className="header bg-white shadow py-4 px-4">
