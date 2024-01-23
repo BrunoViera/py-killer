@@ -10,14 +10,20 @@ const toggleSideBar = () => {
 
 const hideSideBar = () => {
   const sidebar = document.getElementById("default-sidebar");
-  if (sidebar && !sidebar.classList.contains("default-sidebar")) {
+  if (sidebar && !sidebar.classList.contains("-translate-x-full")) {
     sidebar.classList.add("-translate-x-full");
   }
 };
 
+// 1024px is desktop view
+const MATCH_MEDIA_QUERY = "(max-width: 1023px)";
+
 export default function MobileHeader() {
   useEffect(() => {
-    document.body.addEventListener("click", hideSideBar);
+    if (window.matchMedia(MATCH_MEDIA_QUERY).matches) {
+      document.body.addEventListener("click", hideSideBar);
+    }
+
     return () => document.body.removeEventListener("click", hideSideBar);
   }, []);
 
