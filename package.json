@@ -12,6 +12,7 @@
     "@hookform/resolvers": "^3.3.2",
     "@prisma/client": "^5.5.2",
     "@radix-ui/themes": "^2.0.3",
+    "@tanstack/react-table": "^8.11.7",
     "classnames": "^2.5.1",
     "next": "^14.0.4",
     "react": "^18",
