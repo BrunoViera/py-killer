@@ -65,6 +65,7 @@ model Category {
   updatedAt DateTime @updatedAt
   published Boolean  @default(false)
 
+  /// @zod.string({ required_error: "Ingrese un nombre a la categoria",  }).min(3)
   name        String
   description String? @db.VarChar(255)
 

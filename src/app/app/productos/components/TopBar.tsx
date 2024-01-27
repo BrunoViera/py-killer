@@ -1,12 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { Category } from "../../../../../prisma/generated/zod";
 import Button from "../../components/Buttons/Button";
 import { MagnifyingGlassIcon, PlusIcon } from "../../components/Icons";
+import useCategory from "../hooks/useCategory";
 import CategoryForm from "./Form/CategoryForm";
 
 export default function TopBar() {
+  const { createCategory } = useCategory();
   const [isCategoryFormOpen, setIsCategoryFormOpen] = useState(false);
+  const [newCategory, setNewCategory] = useState<Category | undefined>();
+
+  const onCreateCategory = () => {
+    setNewCategory(createCategory());
+    setIsCategoryFormOpen(true);
+  };
+
   return (
     <>
       <section className="header bg-slate-50 shadow py-4 px-4">
@@ -38,17 +48,20 @@ export default function TopBar() {
             <PlusIcon className="fill-current w-4 h-4 mr-2" />
             <span>Producto</span>
           </Button>
-          <Button onClick={() => setIsCategoryFormOpen(true)}>
+          <Button onClick={onCreateCategory}>
             <PlusIcon className="fill-current w-4 h-4 mr-2" />
             <span>Categoría</span>
           </Button>
         </div>
       </section>
 
-      <CategoryForm
-        isOpen={isCategoryFormOpen}
-        onClose={() => setIsCategoryFormOpen(false)}
-      />
+      {newCategory && (
+        <CategoryForm
+          category={newCategory}
+          isOpen={isCategoryFormOpen}
+          onClose={() => setIsCategoryFormOpen(false)}
+        />
+      )}
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function Button({
   children: ReactNode;
   className?: string;
   type?: "button" | "submit";
-  onClick: () => void;
+  onClick?: () => void;
 }) {
   return (
     <button

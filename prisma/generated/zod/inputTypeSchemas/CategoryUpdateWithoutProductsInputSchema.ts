@@ -10,7 +10,7 @@ export const CategoryUpdateWithoutProductsInputSchema: z.ZodType<Prisma.Category
   createdAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
   updatedAt: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
   published: z.union([ z.boolean(),z.lazy(() => BoolFieldUpdateOperationsInputSchema) ]).optional(),
-  name: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
+  name: z.union([ z.string({ required_error: "Ingrese un nombre a la categoria",  }).min(3),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   description: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
   restaurant: z.lazy(() => RestaurantUpdateOneRequiredWithoutCategoryNestedInputSchema).optional()
 }).strict();

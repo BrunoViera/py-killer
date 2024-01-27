@@ -7,7 +7,7 @@ export const CategoryUncheckedCreateInputSchema: z.ZodType<Prisma.CategoryUnchec
   createdAt: z.coerce.date().optional(),
   updatedAt: z.coerce.date().optional(),
   published: z.boolean().optional(),
-  name: z.string(),
+  name: z.string({ required_error: "Ingrese un nombre a la categoria",  }).min(3),
   description: z.string().optional().nullable(),
   restaurantId: z.number().int(),
   products: z.lazy(() => ProductUncheckedCreateNestedManyWithoutCategoryInputSchema).optional()

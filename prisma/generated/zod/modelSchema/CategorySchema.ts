@@ -9,7 +9,7 @@ export const CategorySchema = z.object({
   createdAt: z.coerce.date(),
   updatedAt: z.coerce.date(),
   published: z.boolean(),
-  name: z.string(),
+  name: z.string({ required_error: "Ingrese un nombre a la categoria",  }).min(3),
   description: z.string().nullable(),
   restaurantId: z.number().int(),
 })
