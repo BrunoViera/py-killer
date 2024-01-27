@@ -9,6 +9,7 @@ export const ProductSchema = z.object({
   createdAt: z.coerce.date(),
   updatedAt: z.coerce.date(),
   published: z.boolean(),
+  price: z.number().int(),
   name: z.string(),
   description: z.string().nullable(),
   restaurantId: z.number().int(),

@@ -16,6 +16,7 @@ export const ProductSelectSchema: z.ZodType<Prisma.ProductSelect> = z.object({
   createdAt: z.boolean().optional(),
   updatedAt: z.boolean().optional(),
   published: z.boolean().optional(),
+  price: z.boolean().optional(),
   name: z.boolean().optional(),
   description: z.boolean().optional(),
   restaurantId: z.boolean().optional(),

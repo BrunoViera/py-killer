@@ -3,9 +3,9 @@ import { z } from 'zod';
 import { ProductWhereInputSchema } from './ProductWhereInputSchema';
 import { DateTimeFilterSchema } from './DateTimeFilterSchema';
 import { BoolFilterSchema } from './BoolFilterSchema';
+import { IntFilterSchema } from './IntFilterSchema';
 import { StringFilterSchema } from './StringFilterSchema';
 import { StringNullableFilterSchema } from './StringNullableFilterSchema';
-import { IntFilterSchema } from './IntFilterSchema';
 import { IntNullableFilterSchema } from './IntNullableFilterSchema';
 import { RestaurantRelationFilterSchema } from './RestaurantRelationFilterSchema';
 import { RestaurantWhereInputSchema } from './RestaurantWhereInputSchema';
@@ -23,6 +23,7 @@ export const ProductWhereUniqueInputSchema: z.ZodType<Prisma.ProductWhereUniqueI
   createdAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   updatedAt: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   published: z.union([ z.lazy(() => BoolFilterSchema),z.boolean() ]).optional(),
+  price: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),
   name: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   description: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
   restaurantId: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),

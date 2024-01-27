@@ -6,6 +6,7 @@ export const ProductUncheckedCreateInputSchema: z.ZodType<Prisma.ProductUnchecke
   createdAt: z.coerce.date().optional(),
   updatedAt: z.coerce.date().optional(),
   published: z.boolean().optional(),
+  price: z.number().int(),
   name: z.string(),
   description: z.string().optional().nullable(),
   restaurantId: z.number().int(),
