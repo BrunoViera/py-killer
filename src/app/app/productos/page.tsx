@@ -90,7 +90,7 @@ export default function Productos() {
     <div className="main-content flex flex-col flex-grow p-4 mt-8">
       <h1 className="font-bold text-2xl text-gray-700 p-4">Productos</h1>
       <TopBar />
-      <div className="flex flex-col flex-grow  bg-white rounded mt-4 h-screen p-4">
+      <div className="flex flex-col flex-grow  bg-white rounded mt-4 min-h-full p-4">
         <Products />
         {/* <table className="w-full min-w-max table-auto text-left">
           <thead className="bg-blue-200 ">

@@ -1,4 +1,3 @@
-import "@radix-ui/themes/styles.css";
 import classNames from "classnames";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
