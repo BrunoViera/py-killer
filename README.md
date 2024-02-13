@@ -37,3 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Al modificar el schema hay que crear los types nuevamente
 `./node_modules/.bin/prisma generate`
+
+SEED DB
+
+```bash
+npx prisma db seed
+```
