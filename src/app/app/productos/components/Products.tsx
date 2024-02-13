@@ -1,6 +1,5 @@
 "use client";
-
-import { Product } from "@/types/Tenant/Product";
+import { Product } from "@prisma/client";
 import {
   createColumnHelper,
   flexRender,
@@ -8,40 +7,40 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-const defaultData: Product[] = [
-  {
-    uuid: crypto.randomUUID(),
-    name: "Pizza porción",
-    price: 150,
-    description: "Un triangulo de pizza",
-  },
-  {
-    uuid: crypto.randomUUID(),
-    name: "Pizza chica",
-    price: 250,
-    description: "Pizza de 20cm",
-  },
-  {
-    uuid: crypto.randomUUID(),
-    name: "Pizza mediana",
-    price: 350,
-    description: "Pizza de 40cm",
-  },
-  {
-    uuid: crypto.randomUUID(),
-    name: "Pizza grande",
-    price: 450,
-    description: "Pizza de 60cm",
-  },
-  {
-    uuid: crypto.randomUUID(),
-    name: "Pizza familiar",
-    price: 550,
-    description: "Pizza de 80cm",
-  },
-];
+// const defaultData: Product[] = [
+//   {
+//     uuid: crypto.randomUUID(),
+//     name: "Pizza porción",
+//     price: 159,
+//     description: "Un triangulo de pizza",
+//   },
+//   {
+//     uuid: crypto.randomUUID(),
+//     name: "Pizza chica",
+//     price: 250,
+//     description: "Pizza de 20cm",
+//   },
+//   {
+//     uuid: crypto.randomUUID(),
+//     name: "Pizza mediana",
+//     price: 350,
+//     description: "Pizza de 40cm",
+//   },
+//   {
+//     uuid: crypto.randomUUID(),
+//     name: "Pizza grande",
+//     price: 450,
+//     description: "Pizza de 60cm",
+//   },
+//   {
+//     uuid: crypto.randomUUID(),
+//     name: "Pizza familiar",
+//     price: 550,
+//     description: "Pizza de 80cm",
+//   },
+// ];
 
-export default function Products() {
+export default function Products({ products }: { products: Product[] }) {
   const columnHelper = createColumnHelper<Product>();
   const columns = [
     columnHelper.accessor("name", {
@@ -62,7 +61,7 @@ export default function Products() {
   ];
 
   const table = useReactTable({
-    data: defaultData,
+    data: products,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
@@ -75,7 +74,7 @@ export default function Products() {
             {headerGroup.headers.map((header) => (
               <th
                 key={header.id}
-                className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                className="border-blue-gray-100 bg-blue-gray-50/50 border-y p-4"
               >
                 <span className="font-normal leading-none opacity-70">
                   {header.isPlaceholder
@@ -92,7 +91,7 @@ export default function Products() {
       </thead>
       <tbody>
         {table.getRowModel().rows.map((row) => (
-          <tr key={row.id} className="font-sans text-slate-500 text-center">
+          <tr key={row.id} className="text-center font-sans text-slate-500">
             {row.getVisibleCells().map((cell) => (
               <td key={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
