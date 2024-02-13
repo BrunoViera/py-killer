@@ -1,7 +1,5 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
+import User from "./sidebarMenu/User";
 
 /**
  * Mas info, https://flowbite.com/docs/components/sidebar/
@@ -17,19 +15,7 @@ export default function SidebarMenu() {
       <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
         <ul className="space-y-2 font-medium">
           <li className="p-2">
-            <div className="flex items-center gap-4">
-              <Image
-                width={10}
-                height={10}
-                className="w-10 h-10 rounded-full"
-                src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                alt=""
-              />
-              <div className="flex flex-col dark:text-white">
-                <span className="font-medium">Bruno Viera</span>
-                <span className="text-xs">Administrador</span>
-              </div>
-            </div>
+            <User />
           </li>
           <li>
             <Link
