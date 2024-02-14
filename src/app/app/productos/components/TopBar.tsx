@@ -1,20 +1,31 @@
 "use client";
 
+import { Product } from "@prisma/client";
 import { useState } from "react";
 import { Category } from "../../../../../prisma/generated/zod";
 import Button from "../../components/Buttons/Button";
 import { MagnifyingGlassIcon, PlusIcon } from "../../components/Icons";
 import useCategory from "../hooks/useCategory";
+import useProduct from "../hooks/useProduct";
 import CategoryForm from "./Form/CategoryForm";
+import ProductForm from "./Form/ProductForm";
 
 export default function TopBar() {
   const { createCategory } = useCategory();
+  const { createProduct } = useProduct();
   const [isCategoryFormOpen, setIsCategoryFormOpen] = useState(false);
   const [newCategory, setNewCategory] = useState<Category | undefined>();
+  const [isProductFormOpen, setIsProductFormOpen] = useState(false);
+  const [newProduct, setNewProduct] = useState<Product | undefined>();
 
   const onCreateCategory = () => {
     setNewCategory(createCategory());
     setIsCategoryFormOpen(true);
+  };
+
+  const onCreateProduct = () => {
+    setNewProduct(createProduct());
+    setIsProductFormOpen(true);
   };
 
   return (
@@ -44,7 +55,7 @@ export default function TopBar() {
             </a>
           </div>
 
-          <Button onClick={() => console.log("creo producto")}>
+          <Button onClick={onCreateProduct}>
             <PlusIcon className="fill-current w-4 h-4 mr-2" />
             <span>Producto</span>
           </Button>
@@ -60,6 +71,13 @@ export default function TopBar() {
           category={newCategory}
           isOpen={isCategoryFormOpen}
           onClose={() => setIsCategoryFormOpen(false)}
+        />
+      )}
+      {newProduct && (
+        <ProductForm
+          product={newProduct}
+          isOpen={isProductFormOpen}
+          onClose={() => setIsProductFormOpen(false)}
         />
       )}
     </>
