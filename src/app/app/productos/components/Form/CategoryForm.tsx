@@ -30,7 +30,12 @@ export default function CategoryForm({
     defaultValues: category,
   });
 
-  const onSubmit: SubmitHandler<Category> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Category> = (data) => {
+    const category = fetch("/api/category", {
+      body: JSON.stringify(data),
+      method: "POST",
+    });
+  };
 
   console.log(errors);
 
