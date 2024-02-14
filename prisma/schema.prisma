@@ -79,10 +79,12 @@ model Product {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   published Boolean  @default(false)
-  price     Int
 
+  /// @zod.string({required_error: "Ingrese un nombre al producto"}).min(3, { message: "Ingrese un nombre al producto" })
   name        String
   description String? @db.VarChar(255)
+  /// @zod.number({ invalid_type_error: "Ingrese un precio válido"}).min(0, {message: "Ingrese un monto mayor o igual a 0"})
+  price       Float
 
   restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
   restaurantId Int

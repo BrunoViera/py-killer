@@ -139,6 +139,7 @@ export { CategoryAvgOrderByAggregateInputSchema } from './CategoryAvgOrderByAggr
 export { CategoryMaxOrderByAggregateInputSchema } from './CategoryMaxOrderByAggregateInputSchema';
 export { CategoryMinOrderByAggregateInputSchema } from './CategoryMinOrderByAggregateInputSchema';
 export { CategorySumOrderByAggregateInputSchema } from './CategorySumOrderByAggregateInputSchema';
+export { FloatFilterSchema } from './FloatFilterSchema';
 export { IntNullableFilterSchema } from './IntNullableFilterSchema';
 export { CategoryNullableRelationFilterSchema } from './CategoryNullableRelationFilterSchema';
 export { ProductCountOrderByAggregateInputSchema } from './ProductCountOrderByAggregateInputSchema';
@@ -146,6 +147,7 @@ export { ProductAvgOrderByAggregateInputSchema } from './ProductAvgOrderByAggreg
 export { ProductMaxOrderByAggregateInputSchema } from './ProductMaxOrderByAggregateInputSchema';
 export { ProductMinOrderByAggregateInputSchema } from './ProductMinOrderByAggregateInputSchema';
 export { ProductSumOrderByAggregateInputSchema } from './ProductSumOrderByAggregateInputSchema';
+export { FloatWithAggregatesFilterSchema } from './FloatWithAggregatesFilterSchema';
 export { IntNullableWithAggregatesFilterSchema } from './IntNullableWithAggregatesFilterSchema';
 export { AddressCountOrderByAggregateInputSchema } from './AddressCountOrderByAggregateInputSchema';
 export { AddressAvgOrderByAggregateInputSchema } from './AddressAvgOrderByAggregateInputSchema';
@@ -213,6 +215,7 @@ export { RestaurantUpdateOneRequiredWithoutCategoryNestedInputSchema } from './R
 export { ProductUncheckedUpdateManyWithoutCategoryNestedInputSchema } from './ProductUncheckedUpdateManyWithoutCategoryNestedInputSchema';
 export { RestaurantCreateNestedOneWithoutProductInputSchema } from './RestaurantCreateNestedOneWithoutProductInputSchema';
 export { CategoryCreateNestedOneWithoutProductsInputSchema } from './CategoryCreateNestedOneWithoutProductsInputSchema';
+export { FloatFieldUpdateOperationsInputSchema } from './FloatFieldUpdateOperationsInputSchema';
 export { RestaurantUpdateOneRequiredWithoutProductNestedInputSchema } from './RestaurantUpdateOneRequiredWithoutProductNestedInputSchema';
 export { CategoryUpdateOneWithoutProductsNestedInputSchema } from './CategoryUpdateOneWithoutProductsNestedInputSchema';
 export { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema';
@@ -243,6 +246,7 @@ export { NestedBoolWithAggregatesFilterSchema } from './NestedBoolWithAggregates
 export { NestedStringNullableWithAggregatesFilterSchema } from './NestedStringNullableWithAggregatesFilterSchema';
 export { NestedIntNullableFilterSchema } from './NestedIntNullableFilterSchema';
 export { NestedFloatNullableWithAggregatesFilterSchema } from './NestedFloatNullableWithAggregatesFilterSchema';
+export { NestedFloatWithAggregatesFilterSchema } from './NestedFloatWithAggregatesFilterSchema';
 export { NestedIntNullableWithAggregatesFilterSchema } from './NestedIntNullableWithAggregatesFilterSchema';
 export { NestedEnumBankNameFilterSchema } from './NestedEnumBankNameFilterSchema';
 export { NestedEnumBankNameWithAggregatesFilterSchema } from './NestedEnumBankNameWithAggregatesFilterSchema';
